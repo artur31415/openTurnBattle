@@ -1,6 +1,19 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://MainN2D.gd" type="Script" id=1]
+[ext_resource path="res://img/background.png" type="Texture" id=2]
+[ext_resource path="res://scenes/BattlerN2D.tscn" type="PackedScene" id=3]
 
 [node name="MainN2D" type="Node2D"]
 script = ExtResource( 1 )
+
+[node name="Background" type="Sprite" parent="."]
+position = Vector2( 522.667, 302 )
+scale = Vector2( 0.544444, 0.566667 )
+texture = ExtResource( 2 )
+
+[node name="BattlerN2D" parent="." instance=ExtResource( 3 )]
+position = Vector2( 464, 248 )
+
+[node name="BattlerN2D2" parent="." instance=ExtResource( 3 )]
+position = Vector2( 592, 440 )
