@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Battler",
 "language": "GDScript",
 "path": "res://scripts/Battler.gd"
+}, {
+"base": "Reference",
+"class": "BattlerStatus",
+"language": "GDScript",
+"path": "res://scripts/BattlerStatus.gd"
 } ]
 _global_script_class_icons={
-"Battler": ""
+"Battler": "",
+"BattlerStatus": ""
 }
 
 [application]

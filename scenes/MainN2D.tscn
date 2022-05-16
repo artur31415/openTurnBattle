@@ -14,6 +14,7 @@ scale = Vector2( 0.544444, 0.566667 )
 texture = ExtResource( 2 )
 
 [node name="BattlerN2D" parent="." instance=ExtResource( 3 )]
+visible = false
 position = Vector2( 464, 248 )
 
 [node name="BattlerN2D2" parent="." instance=ExtResource( 3 )]
