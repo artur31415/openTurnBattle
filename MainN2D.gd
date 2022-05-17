@@ -27,9 +27,9 @@ func ShowEnemyBattlerStatus(battlerScene):
 	$NameL.text = battlerScene.battler.Name
 
 func GetEnemyBattlerByKey(battlerKey):
-	for battler in EnemyBattlers:
-		if battler.Key == battlerKey:
-			return battler
+	for battlerScene in EnemyBattlers:
+		if battlerScene.battler.Key == battlerKey:
+			return battlerScene
 
 	return null
 
