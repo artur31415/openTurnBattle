@@ -15,12 +15,18 @@ _global_script_classes=[ {
 "path": "res://scripts/Battler.gd"
 }, {
 "base": "Reference",
+"class": "BattlerSkill",
+"language": "GDScript",
+"path": "res://scripts/BattlerSkill.gd"
+}, {
+"base": "Reference",
 "class": "BattlerStatus",
 "language": "GDScript",
 "path": "res://scripts/BattlerStatus.gd"
 } ]
 _global_script_class_icons={
 "Battler": "",
+"BattlerSkill": "",
 "BattlerStatus": ""
 }
 
