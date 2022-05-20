@@ -1,30 +1,28 @@
 class_name BattlerStatus
 
-var HP
-var MHP
+var values = {
+    "HP": 0,
+    "MHP": 0,
+    "MP": 0,
+    "MMP": 0,
+    "Experience": 0,
+    "LVL": 0,
 
-var MP
-var MMP
+    "PATK": 0,
+    "PDEF": 0,
 
-var Experience
-var LVL
+    "MATK": 0,
+    "MDEF": 0,
+}
 
-func _init(_MHP, _MMP):
-    MHP = _MHP
-    MMP = _MMP
+
+func _init(_values):
+    for k in _values:
+        values[k] = _values[k]
     
-
 func AddFromAnother(anotherBattlerStatus):
-    if anotherBattlerStatus.MHP > 0:
-        MHP += anotherBattlerStatus.MHP
-
-    if anotherBattlerStatus.MMP > 0:
-        MMP += anotherBattlerStatus.MMP
-
-    HP = ClampStatus(HP + anotherBattlerStatus.HP, 0, MHP)
-    MP = ClampStatus(MP + anotherBattlerStatus.MP, 0, MMP)
-
-    Experience += anotherBattlerStatus.Experience
+    for k in anotherBattlerStatus.values:
+        values[k] += anotherBattlerStatus.values[k]
 
 func ClampStatus(value, lower_bound, upper_bound):
     var result = value
