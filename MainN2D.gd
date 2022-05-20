@@ -33,11 +33,15 @@ func GetEnemyBattlerByKey(battlerKey):
 
 	return null
 
+#FIXME:
 func on_battler_clicked_received(battlerKey):
 	print("on_battler_clicked_received>", battlerKey)
-	var selectedBattler = GetEnemyBattlerByKey(battlerKey)
-	if selectedBattler != null:
-		ShowEnemyBattlerStatus(selectedBattler)
+	if battlerKey == PlayerBattler.Key:
+		print("selected player")
+	else:
+		var selectedBattler = GetEnemyBattlerByKey(battlerKey)
+		if selectedBattler != null:
+			ShowEnemyBattlerStatus(selectedBattler)
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -47,6 +51,14 @@ func _ready():
 	enemyBattlerScene.connect("battler_clicked", self, "on_battler_clicked_received")
 	add_child(enemyBattlerScene)
 	EnemyBattlers.append(enemyBattlerScene)
+
+
+	var playerBattlerScene = BattlerN2D.instance()
+	var playerBattler = Battler.new("B_KEY_P", "Little Bat")
+	playerBattlerScene.Setup(playerBattler, Vector2(592, 440))
+	playerBattlerScene.connect("battler_clicked", self, "on_battler_clicked_received")
+	add_child(playerBattlerScene)
+	PlayerBattler = playerBattlerScene
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
